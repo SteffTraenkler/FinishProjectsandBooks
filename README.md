@@ -1,4 +1,4 @@
-#Project for organising some Hobbies
+## Project for organising some Hobbies
 
 So I came upon this idea to give yourself some pocket money for doing hobby stuff like finishing a book or a game etc.
 
