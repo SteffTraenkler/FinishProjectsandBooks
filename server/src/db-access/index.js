@@ -6,6 +6,7 @@ const GamesDAO = require("./games-dao");
 const MoviesDAO = require("./movies-dao");
 const ProjectsDAO = require("./projects-dao");
 const UserDAO = require("./comics-dao");
+const SeriesDAO = require("./series-dao");
 
 module.exports = {
     StudyDAO,
@@ -15,5 +16,6 @@ module.exports = {
     GamesDAO,
     MoviesDAO,
     ProjectsDAO,
-    UserDAO
+    UserDAO,
+    SeriesDAO
 }
