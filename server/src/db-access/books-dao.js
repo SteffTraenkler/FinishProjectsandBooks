@@ -52,14 +52,14 @@ async function findBooksByGenre(genre) {
 }
 
 async function findBooksInPossesion() {
-    const db = getDB();
-    const allBooks = db.collection("Buecher").find({ stillInPossession: true }).sort({ title: -1 }).toArray();
+    const db = await getDB();
+    const allBooks = await db.collection("Buecher").find({ stillInPossession: true }).sort({ title: -1 }).toArray();
     return allBooks;
 }
 
 async function findBooksNOTInPossession() {
-    const db = getDB();
-    const allBooks = db.collection("Buecher").find({ stillInPossession: false }).sort({ title: -1 }).toArray();
+    const db = await getDB();
+    const allBooks = await db.collection("Buecher").find({ stillInPossession: false }).sort({ title: -1 }).toArray();
     return allBooks;
 }
 

@@ -4,7 +4,7 @@ const { getDB } = require("./getDB");
 //read
 async function findAllArtProjects() {
     const db = await getDB();
-    const allArtProjects = db.collection("ArtProject").find().sort({ addedAt: -1 }).toArray();
+    const allArtProjects = await db.collection("ArtProject").find().sort({ addedAt: -1 }).toArray();
     return allArtProjects;
 }
 
@@ -33,7 +33,7 @@ async function findArtByWIPs() {
 
 async function findArtNotInPossesion() {
     const db = await getDB();
-    const allArtProjects = db.collection("ArtProject").find({ stillInPossession: false }).sort({ lastChange: -1 }).toArray();
+    const allArtProjects = await db.collection("ArtProject").find({ stillInPossession: false }).sort({ lastChange: -1 }).toArray();
     return allArtProjects;
 }
 
