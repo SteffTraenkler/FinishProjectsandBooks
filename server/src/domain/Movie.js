@@ -20,7 +20,8 @@ function makeMovie({
     finishPoints = 0,
     boughtAt,
     addedAt = Date.now(),
-    finishedAt
+    finishedAt,
+    stillInPossession = true
 }) {
     if (!title) {
         throw new Error("Book needs a title!");
@@ -49,7 +50,8 @@ function makeMovie({
         finishPoints,
         boughtAt,
         addedAt,
-        finishedAt
+        finishedAt,
+        stillInPossession
     };
 }
 

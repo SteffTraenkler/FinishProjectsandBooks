@@ -31,6 +31,12 @@ async function findArtByWIPs() {
     return allArtProjects;
 }
 
+async function findArtNotInPossesion() {
+    const db = await getDB();
+    const allArtProjects = db.collection("ArtProject").find({ stillInPossession: false }).sort({ lastChange: -1 }).toArray();
+    return allArtProjects;
+}
+
 
 //create update delete
 async function insertNewArt(art) {
@@ -60,6 +66,7 @@ module.exports = {
     findAllUnfinishedArtProjects,
     findAllFinishedArtProjects,
     findArtByWIPs,
+    findArtNotInPossesion,
     insertNewArt,
     updateArtProject,
     deleteArtProject

@@ -15,12 +15,14 @@ function makeComic({
     seriesLength = 0,
     comicNumberFromSeries = 0,
     seriesId = "",
+    seriesfinished = false,
     price = 0,
     finished = false,
     finishPoints = 0,
     boughtAt,
     addedAt = Date.now(),
-    finishedAt
+    finishedAt,
+    stillInPossession = true
 }) {
     if (!title) {
         throw new Error("Book needs a title!");
@@ -45,13 +47,18 @@ function makeComic({
         genre,
         language,
         pageNumber,
+        series,
         seriesLength: 1 || "unknown" || seriesLength,
+        comicNumberFromSeries,
+        seriesId,
+        seriesfinished,
         price,
         finished,
         finishPoints,
         boughtAt,
         addedAt,
-        finishedAt
+        finishedAt,
+        stillInPossession
     };
 }
 

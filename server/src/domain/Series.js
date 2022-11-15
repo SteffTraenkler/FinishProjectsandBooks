@@ -6,6 +6,7 @@ function makeSeries({
     addedAt = Date.now(),
     finished = false,
     finishedAt,
+    stillInPossession = true
 }) {
     if (title) {
         throw new Error("Series needs some title");
@@ -19,6 +20,7 @@ function makeSeries({
         addedAt,
         finished,
         finishedAt,
+        stillInPossession
     };
 }
 

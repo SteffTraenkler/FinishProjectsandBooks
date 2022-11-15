@@ -12,7 +12,8 @@ function makeArtProject({
     finishedAt,
     url = [] || "",
     addedAt = Date.now(),
-    lastChange = Date.now()
+    lastChange = Date.now(),
+    stillInPossession = true
 }) {
     return {
         _id,
@@ -29,7 +30,8 @@ function makeArtProject({
         finishedAt,
         url,
         addedAt,
-        lastChange
+        lastChange,
+        stillInPossession
     }
 }
 

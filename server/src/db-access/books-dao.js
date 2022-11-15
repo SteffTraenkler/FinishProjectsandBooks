@@ -5,7 +5,7 @@ const { getDB } = require("./getDB");
 //read
 async function findAllBooks() {
     const db = await getDB();
-    const allBooks = await db.collection("Buecher").find().sort({ title: 1, }).toArray();
+    const allBooks = await db.collection("Buecher").find().sort({ title: -1, }).toArray();
     return allBooks;
 }
 
@@ -51,6 +51,18 @@ async function findBooksByGenre(genre) {
     return allBooks;
 }
 
+async function findBooksInPossesion() {
+    const db = getDB();
+    const allBooks = db.collection("Buecher").find({ stillInPossession: true }).sort({ title: -1 }).toArray();
+    return allBooks;
+}
+
+async function findBooksNOTInPossession() {
+    const db = getDB();
+    const allBooks = db.collection("Buecher").find({ stillInPossession: false }).sort({ title: -1 }).toArray();
+    return allBooks;
+}
+
 //create, update, delete
 
 async function insertNewBook(book) {
@@ -83,6 +95,8 @@ module.exports = {
     findBooksbyfinished,
     findBooksbyUnfinished,
     findBooksByGenre,
+    findBooksInPossesion,
+    findBooksNOTInPossession,
     insertNewBook,
     updateBookInfo,
     deleteBook
