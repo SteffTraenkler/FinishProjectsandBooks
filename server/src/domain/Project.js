@@ -14,6 +14,7 @@ function makeProject({
     url = [] || "",
     addedAt = Date.now(),
     finishedAt,
+    lastChange = Date.now(),
     stillInPossession = true
 }) {
     return {
@@ -33,6 +34,7 @@ function makeProject({
         url,
         addedAt,
         finishedAt,
+        lastChange,
         stillInPossession
     }
 }
