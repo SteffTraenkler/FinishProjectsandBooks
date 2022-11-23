@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
 const dotenv = require("dotenv");
+const { userRouter } = require("./routes/user-routes");
 dotenv.config();
 
 
@@ -36,5 +37,7 @@ app.use(express.static("assets"));
 app.get("/", (_, res) => {
     res.send("Server is on and running.");
 });
+
+app.use("/users", userRouter);
 
 app.listen(PORT, () => console.log("Server runs on port", PORT));
